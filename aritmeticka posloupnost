@@ -1,0 +1,62 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+const int WIDTH = 0;
+const int HEIGHT = 0;
+
+int xy = 1;
+int yx = 1;
+
+int n = 50;
+int one = 1;
+int a;
+int a1;
+int d = 3;
+
+int main()
+{
+       /*starting number: */ a = 0;
+       /* diference*/ d = 0; 
+
+    a1 = a;
+    const int WIDTH = n / 2;
+    const int HEIGHT = n / 2;
+    
+    int pole[WIDTH][HEIGHT];
+   
+    for (int y = 0; y < HEIGHT; y++)
+    {
+        for (int x = 0; x < WIDTH; x++)
+        {
+            pole[x][y] = 0;
+        }
+    }
+    
+    
+    for (int i = 0; i <= WIDTH; i++)
+    {
+        pole[xy][yx] = a1;
+        a1 = a1 + d;
+        xy = xy + one;
+        yx = yx + one;
+        pole[WIDTH][HEIGHT] = 0;
+    } 
+
+    printf ("diference:\n");
+    for (int y = 0; y < HEIGHT; y++)
+    {
+        for (int x = 0; x < WIDTH; x++)
+        {
+            if (pole[x][y] == 0)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf("%d", pole[x][y]);
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
